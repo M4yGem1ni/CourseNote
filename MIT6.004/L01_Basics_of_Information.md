@@ -85,6 +85,7 @@ It`s helpful to represent **an unambiguous encoding** as a binatree with the sym
 ***encoding: B = 0; A = 11; C = 100; D = 101;***
 
 ![Binary_Tree](./Image/Binary_Tree.jpg)
+
 If you put a label interior like this place, you may cause ambiguties
 
     如果你像这样在里面放一个标签，可能会造成歧义
