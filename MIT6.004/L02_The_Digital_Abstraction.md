@@ -38,10 +38,10 @@ cons:
 we attempt to encode only 1 bit of infomation: "0" and "1".In another word, **we are using voltages digitally**.
 
 1. we use **a single standard** to divide votages into two parts,like 0.5V,if we get 4.999V, we call it "0" and we get 5.001V, we refer it as "1".
-![L02_attempt1](/Image/L02_attempt1.png)
+![L02_attempt1](./Image/L02_attempt1.png)
 Obviously, it will make Mr. computer confused because he cannot distinguish precisely between 4.999V and 5.001V. So this way is **False**
 2. So we can make two standards, called $V_H$ and and $V_L$ and like *attempt_1*, but we divide it into 3 parts.If $V$ are less than $V_L$ ,we call it "0",and if $V$ are higher than $V_H$, we name it "1".
-![L02_attempt2](/Image/L02_attempt2.png)
+![L02_attempt2](./Image/L02_attempt2.png)
 what if $V$ is between $V_L$ and $V_H$ ? Just forget it,because it is forbidden.
 ```
 我们用电压编码1位信息:“0”和“1”。换句话说，我们可以将电压正在数字化。
@@ -88,7 +88,7 @@ A set of interconnected elements is a combinational device if they obey these ru
 The Votages of Input and Output are **different**:
 
 $V_{OL}$ < $V_{IL}$  $while$  $V_{OH}$ > $V_{IH}$
-![L02_InputAndOutput](/Image/L02_InputAndOutput.png)
+![L02_InputAndOutput](./Image/L02_InputAndOutput.png)
 
 This because the **output** must be ***preciser*** than the **input** to reduce the influence of **noise**.
 ```
@@ -101,16 +101,16 @@ The range ($V_{OL}$,$V_{IL}$) and ($V_{IH}$,$V_{OH}$) is called **noise margin**
 ```
 (V_OL,V_IL)和(V_IH,V_OH) 是 噪声容限
 ```
-![L02_noise_margrins](/Image/L02_noise_margrins.png)
+![L02_noise_margrins](./Image/L02_noise_margrins.png)
 
 ### Buffer
-![L02_Buffer1](/Image/L02_Buffer1.png)
+![L02_Buffer1](./Image/L02_Buffer1.png)
 It has a single Input and a single Output. And after some small propagation **delay**, the output has the **same** value as the input.
 ```
 它有一个输入和一个输出。经过一些小的传播延迟后，输出与输入具有相同的值。
 ```
 
-![L02_Buffer](/Image/L02_Buffer.png)
+![L02_Buffer](./Image/L02_Buffer.png)
 Accroading to **Input and Output** I refered before. Device will never fall a point on the pink rigion.
 ```
 根据我之前提到的输入和输出。设备永远不会落在粉红色区域上。
@@ -120,6 +120,6 @@ Accroading to **Input and Output** I refered before. Device will never fall a po
 ```
 这就是V_out和V_in之间的关系。
 ```
-![L02_Buffer2](/Image/L02_Buffer2.png)
+![L02_Buffer2](./Image/L02_Buffer2.png)
 And devices don't behave themselves **at the middle**.
-![L02_Buffer3](/Image/L02_Buffer3.png)
+![L02_Buffer3](./Image/L02_Buffer3.png)
