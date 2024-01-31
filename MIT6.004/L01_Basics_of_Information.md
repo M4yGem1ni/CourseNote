@@ -1,9 +1,10 @@
-# L01_Basics_of_Information
+# L01 Basics of Information
 ## Shannon Equation
 
 You are faced with n equal probable choices,And you receive data set a narrow it down to M choices.Thus the probality that the data would be sent is M*(1/N)
 
-    你面临着n个等概率的选择，你接收到的数据集将其缩小到M个选择。因此，数据被发送的概率是M*(1/N)
+    你面临着n个等概率的选择，你接收到的数据集将其缩小到M个选择。因
+    此，数据被发送的概率是M*(1/N)
 
 ### Here comes the formula:
 
@@ -13,7 +14,8 @@ You are faced with n equal probable choices,And you receive data set a narrow it
 
 In information theory , the entropy H(x) is the **average** amount of information contained in each piece of data received about the value of X.
 
-    在信息论中，熵H(x)是接收到的每条数据中包含的关于x值的平均信息量。
+    在信息论中，熵H(x)是接收到的每条数据中包含的关于x值的平均信息
+    量。
 
 ### Here comes the formula
 ***$H(x) = E(I(x)) = \sum{p(i)*log_2 (\frac{1}{p_i})}$***
@@ -39,7 +41,8 @@ So **Entropy** help us *evaluate* how good the encoding is.
 1. if the average number of bits that is less than the **Entropy** , the information will be deep ***skepticism***. Because you can`t resolve the uncertainity.***So average number of bits > Entropy***
 2. if the average number of bits that is great more than the Entropy , the encoding is useful but ineffecient. 
 ```
-1.如果平均位数即小于熵，则该信息将受到深度怀疑。因为你无法解决不确定性。所以平均比特数 > 熵
+1.如果平均位数即小于熵，则该信息将受到深度怀疑。因为你无法解决不确定
+性。所以平均比特数 > 熵
 2.如果平均比特数大于熵，则编码是有用的但效率低下。
 ```
 ## Encoding
@@ -64,9 +67,12 @@ Different Encodings have their advantages and disadvantages. Even cannot work pr
 
 对于索引1:这是一个视觉和典型的编码，但它很长，可能会导致内存浪费。
 
-对于索引2:这一定比索引1更难理解。但它需要更少的内存来存储，并且可以解码:“01”代表“A”，“1”代表“B”，“1”代表“B”，“01”代表“A”。换句话说，它更有效率。
+对于索引2:这一定比索引1更难理解。但它需要更少的内存来存储，并且可以
+解码:“01”代表“A”，“1”代表“B”，“1”代表“B”，“01”代表“A”。换句话说，
+它更有效率。
 
-对于索引3:此编码为False。因为它可能会造成歧义。“0110”也可以解码为“ADA”或“ABC”。
+对于索引3:此编码为False。因为它可能会造成歧义。“0110”也可以解码为
+“ADA”或“ABC”。
 ``` 
 ## Encoding as **Binary Trees**
 To find an encoding, we can use "Encoding as **Binary Trees**"
@@ -78,7 +84,7 @@ It`s helpful to represent **an unambiguous encoding** as a binatree with the sym
 ### example
 ***encoding: B = 0; A = 11; C = 100; D = 101;***
 
-![Binary_Tree](https://gist.github.com/assets/152044636/cf17ce4c-2e74-4880-98ca-7703c71b30ae)
+![Binary_Tree](/Image/Binary_Tree.jpg)
 If you put a label interior like this place, you may cause ambiguties
 
     如果你像这样在里面放一个标签，可能会造成歧义
@@ -133,14 +139,15 @@ $B = \frac{1}{2}$
 $C = \frac{1}{12}$
 $D = \frac{1}{12}$
 
-![Huffmans_Algorithm](https://gist.github.com/assets/152044636/ec75216b-eae7-4b5e-93a4-f300758339a1)
+![Huffmans_Algorithm](/Image/Huffmans_Algorithm.jpg)
 
 ## Detect Single-Bit Errors: ***Parity Check***
 
 To check for a single-bit error(actually any odd number of errors), ***count the number of 1s*** in the received message and it`s **odd**. There has been an error.
 
     检测单比特错误:奇偶校验
-    要检查一个单比特错误(实际上是任何奇数错误)，计算接收到的消息中的1的个数，它是奇数。有一个错误。
+    要检查一个单比特错误(实际上是任何奇数错误)，计算接收到的消息中的
+    1的个数，它是奇数。有一个错误。
 
 ### example
 0 1 1 0 0 1 0 1 0 0 1 1 -->original word with **parity**
