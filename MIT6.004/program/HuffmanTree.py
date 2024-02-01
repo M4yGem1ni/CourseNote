@@ -9,7 +9,7 @@ class HuffmanTree(object):
 
     def MakeNode(self):     #将权值最小的两个数据/节点生成子树(min1,min2)
         self.Compare()
-        print(self.min2,self.tree)
+        print(self.tree)
         self.weight = self.tree[self.min1][1] + self.tree[self.min2][1]
         self.Node = [ self.tree[self.min1][0],self.tree[self.min2][0] ]
 
@@ -24,19 +24,18 @@ class HuffmanTree(object):
 
 
     def Compare(self):
-        max = 0
-        for i in range (len(self.tree)):        #防止min1,min2一开始取到最小值
-            if max < self.tree[i][1]:
-                self.min1 = self.min2 = i
-                max = i
-        for i in range(len(self.tree)):
-            if self.tree[i][1] <= self.tree[self.min1][1]:
+        tmp = 65535
+        for i in range (len(self.tree)):        #min1取到最小值
+            if  self.tree[i][1] < tmp:
                 self.min1 = i
-            if ((self.tree[i][1] < self.tree[self.min2][1] and self.tree[i][1] > self.tree[self.min1][1]) #tree[i]的权重大于min1但小于min2
-                    or (self.tree[i][1] == self.tree[self.min2][1] and i != self.min1)):    ##min1的权重==min2的权重,但min1 != min2
+                tmp = self.tree[i][1]
+        tmp = 65535
+        for i in range (len(self.tree)):        #min2取到次小值
+            if self.tree[i][1] < tmp and i != self.min1:
                 self.min2 = i
+                tmp = self.tree[i][1]
 
-    def pre(self):
+    def Show(self):
         while len(self.tree) != 1:
             self.MakeNode()
         print(self.tree)
@@ -45,7 +44,7 @@ class HuffmanTree(object):
 def main():
     tree = [['a',3],['b',5],['c',7],['d',8],['e',6],['f',4]]
     MakeTree = HuffmanTree(tree)
-    MakeTree.pre()
+    MakeTree.Show()
 
 if __name__ == '__main__':
     main()
