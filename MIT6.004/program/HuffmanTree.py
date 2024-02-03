@@ -168,8 +168,6 @@ class Turtle(object):   #适用于所有二叉树
             turtle.setx(x)
             turtle.sety(y)
             turtle.pendown()       #画笔落下
-
-        #depth = 0
         def TurtleStep(length,angle,direc,val):     #画出去
             if val == 'nul':
                 return 'nul'
@@ -230,9 +228,9 @@ class Turtle(object):   #适用于所有二叉树
         self.Depth()
         self.AngleLength()
         self.MakeTree()
-        print("重新编码得到的二叉树: ",self.tree)
-        print("画线长度: ",self.lenth)
-        print("线的角度: ",self.angle)
+        #print("重新编码得到的二叉树: ",self.tree)
+        #print("画线长度: ",self.lenth)
+        #print("线的角度: ",self.angle)
         self.TurtleGo()
 
 def main():
