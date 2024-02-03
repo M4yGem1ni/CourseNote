@@ -218,9 +218,6 @@ class Turtle(object):   #适用于所有二叉树
         AdvanceSetting()
         Recursion(0,0)
         turtle.done()
-        
-
-        
 
     def DrawTree(self):
         self.Depth()
