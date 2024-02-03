@@ -2,7 +2,7 @@ import copy
 import turtle
 import math     #计算绘制角度
 
-LENGTH = 150     #设置二叉树最小边长度
+LENGTH = 100     #设置二叉树最小边长度
 CIRCLE = 20      #设置圆框的半径
 
 class HuffmanTree(object):
