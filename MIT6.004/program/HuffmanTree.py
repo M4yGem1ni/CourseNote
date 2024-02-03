@@ -118,21 +118,21 @@ class Turtle(object):   #适用于所有二叉树
         self.angle = []
         self.lenth = []
     
-    def Depth(self):
+    def Depth(self):    #获取二叉树深度,并初始化二叉树
         for part in self.dict:
             if len(self.dict[part]) > self.depth:
                 self.depth = len(self.dict[part])
         for i in range(self.depth):     #创建空的二叉树
             self.tree.append(['nul' for j in range(int(math.pow(2,i+1)))])
 
-    def AngleLength(self):
+    def AngleLength(self):  #获取每一步的长度和角度
         for i in range(self.depth-1 , -1 , -1):
             alpha = math.atan2(LENGTH*math.pow(2,i)/2 , LENGTH)     #alpha为弧度制
             self.lenth.append(int(LENGTH / math.cos(alpha)))
             alpha = int(alpha / math.pi * 180 )       #转化为整型角度制
             self.angle.append(alpha)        #存储角度
 
-    def FindNode(self,part,encoding):
+    def FindNode(self,part,encoding):   #找到一个元素在二叉树中的位置
         last = 0
         for i in range(len(encoding)):
             if len(encoding) == 1:
@@ -143,37 +143,37 @@ class Turtle(object):   #适用于所有二叉树
                 last = int(encoding[0])+last*2
                 encoding = encoding[1:]
 
-    def MakeTree(self):
+    def MakeTree(self):     #遍历设置每一个元素在二叉树中的位置
         for part in self.dict:
             self.FindNode(part,self.dict[part])
 
     def TurtleGo(self):
-        def AdvanceSetting():
+        def AdvanceSetting():       #初始化
             turtle.setup(800,800,0,0)
             turtle.speed(10)
             turtle.hideturtle()
             turtle.penup()         #抬起画笔
-            turtle.goto(0,350)
+            turtle.goto(0,350)     #设置起始位置
             turtle.pendown()       #画笔落下
             #画出第一个圆形
             x = turtle.xcor()
             y = turtle.ycor()
             turtle.penup()         #抬起画笔
-            turtle.seth(270)
+            turtle.seth(270)        #光标垂直向下
             turtle.fd(CIRCLE)
             turtle.seth(0)
             turtle.pendown()       #画笔落下
             turtle.circle(CIRCLE)
             turtle.penup()         #抬起画笔
-            turtle.setx(x)
+            turtle.setx(x)          #返回圆心
             turtle.sety(y)
             turtle.pendown()       #画笔落下
-        def TurtleStep(length,angle,direc,val):     #画出去
-            if val == 'nul':
+        def TurtleStep(length,angle,direc,val):     #每一步的画法
+            if val == 'nul':        #空节点什么也不做
                 return 'nul'
-            if direc == "l":
+            if direc == "l":        #左节点
                 direc = -1
-            elif direc == "r":
+            elif direc == "r":      #右节点
                 direc = 1
             turtle.seth(270+angle*direc)
             turtle.penup()         #抬起画笔
@@ -182,15 +182,15 @@ class Turtle(object):   #适用于所有二叉树
             turtle.fd(length)
             turtle.penup()         #抬起画笔
             turtle.fd(CIRCLE)
-            x = turtle.xcor()
+            x = turtle.xcor()       #记录圆心坐标
             y = turtle.ycor()
             turtle.seth(270)
             turtle.fd(CIRCLE)
             turtle.seth(0)
             turtle.pendown()       #画笔落下
-            turtle.circle(CIRCLE)
+            turtle.circle(CIRCLE)   #画圆
             turtle.penup()         #抬起画笔
-            if val != 'val' :
+            if val != 'val' :       #打字
                 val = '\"'+ val + '\"'
                 turtle.seth(270)
                 turtle.fd(CIRCLE)
@@ -198,23 +198,21 @@ class Turtle(object):   #适用于所有二叉树
                 for val0 in val:
                     turtle.write(val0,font=("宋体",int(CIRCLE),'normal'))
                     turtle.fd(CIRCLE/2)
-            turtle.setx(x)
+            turtle.setx(x)          #返回圆心
             turtle.sety(y)
 
-
-
-        def Recursion(depth,last):        #递归返回
+        def Recursion(depth,last):        #递归,采用前序遍历的方法绘制二叉树
             if depth == self.depth:
                 return "depth"
-            x = turtle.xcor()
+            x = turtle.xcor()   #保存现在的坐标
             y = turtle.ycor()
-            TurtleStep(self.lenth[depth],self.angle[depth],'l',self.tree[depth][2*last+0])
+            TurtleStep(self.lenth[depth],self.angle[depth],'l',self.tree[depth][2*last+0])  #左节点
             Recursion(depth+1,2*last+0)
-            turtle.setx(x)
+            turtle.setx(x)      #返回上一个节点
             turtle.sety(y)
-            TurtleStep(self.lenth[depth],self.angle[depth],'r',self.tree[depth][2*last+1])
+            TurtleStep(self.lenth[depth],self.angle[depth],'r',self.tree[depth][2*last+1])  #右节点
             Recursion(depth+1,2*last+1)
-            turtle.setx(x)
+            turtle.setx(x)      #返回上一个节点
             turtle.sety(y)
 
         AdvanceSetting()
@@ -238,9 +236,13 @@ def main():
     string = input("请输入需要哈夫曼编码的字符串: ")
     MakeTree = HuffmanTree(string)
     encodings = MakeTree.Show()
-    string = input("请输入需要解码的二进制码: ")
-    DecodeTree = Decode(encodings,string)
-    print("解码结果:",DecodeTree.decoding())
+    #string = input("请输入需要解码的二进制码: ")
+    #DecodeTree = Decode(encodings,string)
+    #print("解码结果:",DecodeTree.decoding())
+    tmp = ""
+    for char in string:
+        tmp+=encodings[char]
+    print("\'" + string + "\'" + "编码结果" + tmp)    #打印编码结果
     Draw = Turtle(encodings)
     Draw.DrawTree()
 
