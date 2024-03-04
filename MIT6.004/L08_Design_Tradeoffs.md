@@ -41,6 +41,7 @@ CMOS最大的优点在于它使用电压进行控制，不同于三极管采用�
 
 **计算公式**
 C(电容器)放电损耗：
+
 $P_{NEFT}=f_{clk} \int^{t_{clk}/2}_{0}i_{NEFT} V_{OUT} dt$
 
 $P_{NEFT}=f_{clk} C \int^{t_{clk}/2}_{0} -C \frac{dV_{OUT}}{dt} V_{OUT} dt$
@@ -48,6 +49,7 @@ $P_{NEFT}=f_{clk} C \int^{t_{clk}/2}_{0} -C \frac{dV_{OUT}}{dt} V_{OUT} dt$
 $P_{NEFT}=f_{clk} C \frac{V_{DD}^2}{2}$
 
 C(电容器)充电损耗：
+
 $P_{PEFT}=f_{clk} \int^{t_{clk}}_{t_{clk}/2}i_{PEFT} V_{OUT} dt$
 
 $P_{PEFT}=f_{clk} C \int^{t_{clk}}_{t_{clk}/2} C \frac{dV_{OUT}}{dt} V_{OUT} dt$
