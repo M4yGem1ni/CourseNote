@@ -1,4 +1,5 @@
 import tkinter as tk
+
 val = "0" #状态机状态
 time = 5.9  #定时炸弹时间
 tk_tmp = "" #输入框
@@ -53,6 +54,7 @@ def passwd_check(): #01110
     else:
         val = "0101"
     tk_tmp = ""
+    
 def main():
     global val
     if val == "0":
