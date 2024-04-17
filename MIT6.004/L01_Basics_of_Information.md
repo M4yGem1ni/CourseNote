@@ -12,7 +12,7 @@ You are faced with n equal probable choices,And you receive data set a narrow it
 
 ## Entropy
 
-In information theory , the entropy H(x) is the **average** amount of information contained in each piece of data received about the value of X.
+In information theory , the entropy H(x) is the **average** amount of information contain ed in each piece of data received about the value of X.
 
     在信息论中，熵H(x)是接收到的每条数据中包含的关于x值的平均信息
     量。
@@ -109,12 +109,12 @@ If you put a label interior like this place, you may cause ambiguties
 |"C"|$\frac{1}{12}$|100|
 |"D"|$\frac{1}{12}$|101|
 
-**Entropy: H(x) = 1.626 bit*
+**Entropy: H(x) = 1.626 bit**
 
 ### Expect the length of encoding:
 
 $Length = \frac{1}{3}*2+\frac{1}{2}*1+\frac{1}{12}*3*2 = 1.667 bit$
-
+ 
 ### Expect length of 1000 symbols:
 
 *with fixed length: 2bit/symbol = 2000 bit*

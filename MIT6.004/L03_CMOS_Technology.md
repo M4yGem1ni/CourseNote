@@ -98,3 +98,28 @@ $V_{GS}$ > $V_{TH}$
 那么 $V_G$ > 7V
 而我们之前给$V_G$的高电平也就5V左右($V_{DD}$)不能使NMOS导通
 但是截止之后,$V_S$ = $GND$ 我们又满足了一开始的条件于是...我们进入了死循环,这也就是为什么不能用NMOS上拉的原因了.
+
+### $t_{PD}与t_{CD}的定义阐释$
+**电路图**
+![L03_TPD_TCD_Circuits.png](./Image/L03_TPD_TCD_Circuits.png)
+在图中
+$$
+V_{OL} = 0.3V \\
+V_{OH} = 2.7V \\
+V_{IL} = 1.1V \\
+V_{IH} = 1.8V
+$$
+
+#### $t_{PD}$的定义阐释
+
+![L03_TPD_Defination.png](./Image/L03_TPD_Defination.png)
+
+$t_{PD}$代表的是**有效输入到有效输出的时间**
+即从$out1:V_{IL}$到$out2:V_{OH}$的时间
+
+#### $t_{CD}的定义阐释$
+![L03_TCD_Defination.png](./Image/L03_TCD_Defination.png)
+
+$t_{PD}$代表的是**无效输入到有效输入的时间**
+即从$out1:V_{IH}$到$out1:V_{IL}$的时间
+
