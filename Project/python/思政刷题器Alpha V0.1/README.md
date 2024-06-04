@@ -9,9 +9,11 @@
 1. 下载 python3 ， 把python添加到环境变量(Add Python to PATH)
 
 2. win+R 输入cmd 。依次输入
+``` bash
 pip install pandas 
 pip install tkinter
 pip install sys
+```
 安装失败的浏览器搜**pip换源**
 
 3. 运行project.py
