@@ -3,8 +3,7 @@ import tkinter as tk
 import sys
 import os
 
-path = os.getcwd()
-print(path)
+os.chdir(sys.path[0])
 df = pd.read_csv("./data.csv",index_col=0,encoding='utf-8')
 cor = pd.read_csv("./correct.csv",index_col = 0)
 
