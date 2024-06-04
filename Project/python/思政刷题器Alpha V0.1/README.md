@@ -11,8 +11,6 @@
 2. win+R 输入cmd 。依次输入
 ``` bash
 pip install pandas 
-pip install tkinter
-pip install sys
 ```
 安装失败的浏览器搜**pip换源**
 
