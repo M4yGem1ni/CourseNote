@@ -132,6 +132,19 @@ $P_{PEFT}=f_{clk} C \frac{V_{DD}^2}{2}$
 **这是传播电路(C moudle)**
 ![L08_8-bit_CLA_Carry.png](./Image/L08_8-bit_CLA_Carry.png)
 
+$$
+\begin{align}
+G_i =& A_iB_i  \\
+P_i =& A_i+B_i  \\
+-------&--------------------\\
+C1 =& G_0+P_0*C_0 \\
+C2 =& G_1+P_1*C_1 \\
+C2 =& G_1+P_1G_0+P_1P_0C_0\\
+所以:\\
+C_i =& G_{i-1}+P_{i-1}G_{i-2}+P_{i-1}P_{i-2}G_{i-3}+...\\&+P_{i-1}P_{i-2}...P_1G_0+P_{i-1}...P_{0}C_0
+\end{align}
+$$
+
 **两者组合形成加法器**
 ![L08_8-bit_CLA_Complete.png](./Image/L08_8-bit_CLA_Complete.png)
 
