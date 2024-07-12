@@ -181,6 +181,9 @@ $$
 **具体情况**:
 - $A_i$ = 1 ; $B_i$ = 1 $C_i$ = 1则$P_i$ = $A_i$ + $B_i$ = 1 , $G_i$ = $A_iB_i = 1$ , 因此0x1+0x1+0x1(C_i 进位) = 0x11.根据$S = A_i\space xor \space B_i \space xor \space C_i$ S = 0x1.$C_{i+1} = G_i + (P_i*C_i) = 0x1$
 
+**原理图**
+![L08_Draft_of_CLA](./Image/L08_Draft_of_CLA.jpg)
+
 ## 乘法运算
 ### 基础乘法器(Multipler)
 **二进制乘法**
