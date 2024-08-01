@@ -76,6 +76,39 @@ D寄存器是D-Latch的加强,由两个MUX构成
 2. 然后必须经过一个**传播延迟**(Propagation Delay)$Q$的电平完全稳定($t_{PD}$为稳定所需的最大时间)
 3. 对于D(Data)来说，需要在$t_{SETUP}+t_{HOLD}$这段时间保持稳定，这样才能把数据存储进去。
 -------------------------
+
+### And-Or Latch
+![L05_AND_OR_Latch](./Image/L05_AND_OR_Latch.png)
+还有一种便于理解的就是and-or latch 这也是一种简单的存储方式
+输入存在两根导线,第一根为**置位**(SET),第二根为**复位**(RESET)
+当置位为1复位为0时,输出0
+当置位为1复位为1时,输出1
+当两者同时为0时,输出保持
+
+![L05_Gate_Input](./Image/L05_Gate_Input.png)
+再加一部分电路来区分数据线和使能线会更好地描述这个过程,当然使能线的功能和时钟线相似,就像D-Latch变成DFF那样,我们也能将And-Or Latch变得更加完善
+
+**大型存储的架构**
+![L05_Matrix_Memory](./Image/L05_Matrix_Memory.png)
+当需要大量使用寄存器时(就比如说扩展到64位)我们就需要至少引出65根线(64根数据线,1根使能线)来控制每一个元件.
+这太麻烦了,所以我们可以引入**矩阵**的概念,将64个寄存器排成方阵,通过16根使能线(横8纵8)和一个与门来选择想要控制的寄存器.
+当然实际情况肯定不是这样的,在多数情况下,计算机有时会同时更改许多个相邻的寄存器以提升效率
+同样的可以引入一根**读使能线**来控制是否将结果输出到数据线上
+
+同时我们引入mux(多路复用器)进一步减少我们的线材
+![L05_Multiplexer_Abtraction](./Image/L05_Multiplexer_Abtraction.png)
+这样我们就能用8根线一个256字的存储区块,也就是一个8位地址
+
+![L05_256Bits_Memory](./Image/L05_256Bits_Memory.png)
+我们将其抽象成这样,一个元器件加8根地址线,数据输出(输入)线,写使能和读使能线
+
+![L05_Where_the_Bytes_Came_From](./Image/L05_Where_the_Bytes_Came_From.png)
+至于bytes这个概念是怎么来的呢,就是当我们把8个256位寄存器再次排列到一起,将同一个8位地址输送到他们之中,他们就能够同时读取八位数据,这就是**Byte**的由来
+
+![L05_RAM](./Image/L05_RAM.png)
+我们就能进一步将其抽象为RAM八位地址,八位数据,以及读使能,写使能.
+
+
 ## 单时钟同步电路
 
 ![L05_Single_Clock_Synchronous_Circuits.png](./Image/L05_Single_Clock_Synchronous_Circuits.png)

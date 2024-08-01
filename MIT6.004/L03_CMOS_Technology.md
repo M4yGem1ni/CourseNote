@@ -114,12 +114,12 @@ $$
 
 ![L03_TPD_Defination.png](./Image/L03_TPD_Defination.png)
 
-$t_{PD}$代表的是**有效输入到有效输出的时间**
+$t_{PD}$代表的是**out1有效输入到out2有效输出的时间**
 即从$out1:V_{IL}$到$out2:V_{OH}$的时间
 
 #### $t_{CD}的定义阐释$
-![L03_TCD_Defination.png](./Image/L03_TCD_Defination.png)
+![L03_TCD_Defination.png](./Image/L03_TPD_TCD_Circuits_Modified.png)
 
-$t_{PD}$代表的是**无效输入到有效输入的时间**
-即从$out1:V_{IH}$到$out1:V_{IL}$的时间
+$t_{PD}$代表的是**out2无效输入电平到out2有效输入电平的时间**
+即从$out2:V_{IL}$到$out2:V_{IH}$的时间
 
