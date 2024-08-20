@@ -1,4 +1,8 @@
 # L12_Stack_Detective_Computability
+## 上节回顾
+### 程序示例
+在上一节中,我们学会了怎么样调用递归函数,下面就是一个简单的例子:
+这是上一节的fact函数:
 ```asm
 fact:   PUSH(LP)
         PUSH(BP)
@@ -24,3 +28,7 @@ rtn:    POP(r1)
         POP(LP)
         JMP(LP)
 ```
+
+### 基址针(Base Pointer)
+
+0111|01 11|111 0|0001| 0000 0000 0001 0100
